@@ -44,7 +44,7 @@ public class Candidato {
         this.partido = partido;
     }
     //=====================================OTROS METODOS===========================================//
-    //REGISTRAR CANDIDATO GESTION NO CLASE ORIGINAL//
+    //REGISTRAR CANDIDATO 
     public void registrarCandidato(){
         Scanner sc = new Scanner(System.in);
         boolean terminado = false;

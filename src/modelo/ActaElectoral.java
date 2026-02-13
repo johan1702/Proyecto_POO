@@ -5,90 +5,137 @@ public class ActaElectoral {
     //ATRIBUTOS
     private String titulo;
     private Fecha fecha;
-    private String hora;
+    private Hora hora;
     private String lugar;
-    private String identificacionMesa;
-    private String nombreMM;
-    private int totalVotantes;
-    private int totalEfectivos;
-    
-    //METODOS
-    public ActaElectoral(String titulo, Fecha fecha, String hora, String lugar, 
-            String identificacionMesa, String nombresMM, int totalVotantes, int totalEfectivos) {
+    private int nroIdMesa;
+    private MiembroDeMesa[] miembroDeMesa;
+    private int nroVotantesRegistrados;
+    private int nroVotantesEfectivos;
+    private ResultadoCandidato resultado;;
+    private int votosBlancos;
+    private int votosNulos;
+    private String observaciones;
+    private boolean firmas;
+    private boolean selloOf;
+    private int nroIdActa;
+    //Constructor OVERFLOW
+    public ActaElectoral(String titulo, Fecha fecha, Hora hora, String lugar, 
+            int nroIdMesa, MiembroDeMesa[] miembroDeMesa, int nroVotantesRegistrados, 
+            int nroVotantesEfectivos, ResultadoCandidato resultado, int votosBlancos, 
+            int votosNulos, String observaciones, boolean firmas, boolean selloOf, int nroIdActa) {
         this.titulo = titulo;
         this.fecha = fecha;
         this.hora = hora;
         this.lugar = lugar;
-        this.identificacionMesa = identificacionMesa;
-        this.nombreMM = nombreMM;
-        this.totalVotantes = totalVotantes;
-        this.totalEfectivos = totalEfectivos;
+        this.nroIdMesa = nroIdMesa;
+        this.miembroDeMesa = miembroDeMesa;
+        this.nroVotantesRegistrados = nroVotantesRegistrados;
+        this.nroVotantesEfectivos = nroVotantesEfectivos;
+        this.votosBlancos = votosBlancos;
+        this.votosNulos = votosNulos;
+        this.observaciones = observaciones;
+        this.firmas = firmas;
+        this.selloOf = selloOf;
+        this.nroIdActa = nroIdActa;
+        this.resultado = resultado;
+        miembroDeMesa = new MiembroDeMesa[50];
+    }
+    //CONSTRUCTOR SIN PARAMETROS
+    public ActaElectoral() {
     }
     
-    //GETTERS AND SETTERS
-
+    //GETTERS
     public String getTitulo() {
         return titulo;
     }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
     public Fecha getFecha() {
         return fecha;
     }
-
-    public void setFecha(Fecha fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getHora() {
+    public Hora getHora() {
         return hora;
     }
-
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
-
     public String getLugar() {
         return lugar;
     }
-
+    public int getNroIdMesa() {
+        return nroIdMesa;
+    }
+    public MiembroDeMesa[] getMiembroDeMesa() {
+        return miembroDeMesa;
+    }
+    public int getNroVotantesRegistrados() {
+        return nroVotantesRegistrados;
+    }
+    public int getNroVotantesEfectivos() {
+        return nroVotantesEfectivos;
+    }
+    public String getResultadoCandidato() {
+        return resultado.verInfo();
+    }
+    public int getVotosBlancos() {
+        return votosBlancos;
+    }
+    public int getVotosNulos() {
+        return votosNulos;
+    }
+    public String getObservaciones() {
+        return observaciones;
+    }
+    public boolean getFirmas() {
+        return firmas;
+    }
+    public boolean getSelloOf() {
+        return selloOf;
+    }
+    public int getNroIdActa() {
+        return nroIdActa;
+    }
+    
+    //SETTERS
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    public void setFecha(Fecha fecha) {
+        this.fecha = fecha;
+    }
+    public void setHora(Hora hora) {
+        this.hora = hora;
+    }
     public void setLugar(String lugar) {
         this.lugar = lugar;
     }
-
-    public String getIdentificacionMesa() {
-        return identificacionMesa;
+    public void setNroIdMesa(int nroIdMesa) {
+        this.nroIdMesa = nroIdMesa;
     }
-
-    public void setIdentificacionMesa(String identificacionMesa) {
-        this.identificacionMesa = identificacionMesa;
+    public void setMiembroDeMesa(MiembroDeMesa[] miembroDeMesa) {
+        this.miembroDeMesa = miembroDeMesa;
     }
-
-    public String getNombreMM() {
-        return nombreMM;
+    public void setNroVotantesRegistrados(int nroVotantesRegistrados) {
+        this.nroVotantesRegistrados = nroVotantesRegistrados;
     }
-
-    public void setNombreMM(String nombreMM) {
-        this.nombreMM = nombreMM;
+    public void setNroVotantesEfectivos(int nroVotantesEfectivos) {
+        this.nroVotantesEfectivos = nroVotantesEfectivos;
     }
-
-    public int getTotalVotantes() {
-        return totalVotantes;
+    public void setResultadoCandidato(ResultadoCandidato resultado) {
+        this.resultado = resultado;
     }
-
-    public void setTotalVotantes(int totalVotantes) {
-        this.totalVotantes = totalVotantes;
+    public void setVotosBlancos(int votosBlancos) {
+        this.votosBlancos = votosBlancos;
     }
-
-    public int getTotalEfectivos() {
-        return totalEfectivos;
+    public void setVotosNulos(int votosNulos) {
+        this.votosNulos = votosNulos;
     }
-
-    public void setTotalEfectivos(int totalEfectivos) {
-        this.totalEfectivos = totalEfectivos;
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
+    public void setFirmas(boolean firmas) {
+        this.firmas = firmas;
+    }
+    public void setSelloOf(boolean selloOf) {
+        this.selloOf = selloOf;
+    }
+    public void setNroIdActa(int nroIdActa) {
+        this.nroIdActa = nroIdActa;
     }
     
 }
