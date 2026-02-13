@@ -6,7 +6,7 @@ public class MesaElectoral {
     //ATRIBUTOS
     private int idMesa;
     private MiembroDeMesa[] miembros;
-    private int n;
+    private int n; //cantidad de mesas
     
     //METODOS
     //CONSTRCUTOR CON PARAMETROS
@@ -51,7 +51,7 @@ public class MesaElectoral {
             }
         }while(!terminado && n < miembros.length);
     }
-
+    
     public void mostrarMesa(){
         System.out.println("ID Mesa: " + idMesa);
         for(int i = 0; i < n; i++){
