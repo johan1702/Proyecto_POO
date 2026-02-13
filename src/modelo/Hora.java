@@ -1,0 +1,38 @@
+
+package modelo;
+
+public class Hora {
+    //ATRIBUTOS
+    private int hora;
+    private int minuto;
+    
+    //METODOS
+    public Hora() {
+        hora = 1;
+        minuto = 1;
+    }
+
+    public Hora(int hora, int minuto) {
+        this.hora = hora;
+        this.minuto = minuto;
+    }
+
+    public int getHora() {
+        return hora;
+    }
+    public void setHora(int hora) {
+        this.hora = hora;
+    }
+
+    public int getMinuto() {
+        return minuto;
+    }
+    public void setMes(int minuto) {
+        this.minuto = minuto;
+    }
+    
+    @Override
+    public String toString() {
+        return hora + ":" + minuto;
+    }
+}
