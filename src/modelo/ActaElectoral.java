@@ -1,6 +1,6 @@
 
 package modelo;
-
+import java.util.Scanner;
 public class ActaElectoral {
     //ATRIBUTOS
     private String titulo;
@@ -20,30 +20,31 @@ public class ActaElectoral {
     private int nroIdActa;
     //Constructor OVERFLOW
     public ActaElectoral(String titulo, Fecha fecha, Hora hora, String lugar, 
-            int nroIdMesa, MiembroDeMesa[] miembroDeMesa, int nroVotantesRegistrados, 
-            int nroVotantesEfectivos, ResultadoCandidato resultado, int votosBlancos, 
-            int votosNulos, String observaciones, boolean firmas, boolean selloOf, int nroIdActa) {
+        int nroIdMesa, int nroVotantesRegistrados, 
+        int nroVotantesEfectivos, ResultadoCandidato resultado, 
+        int votosBlancos, int votosNulos, String observaciones, 
+        boolean firmas, boolean selloOf, int nroIdActa) {
+   
         this.titulo = titulo;
         this.fecha = fecha;
         this.hora = hora;
         this.lugar = lugar;
         this.nroIdMesa = nroIdMesa;
-        this.miembroDeMesa = miembroDeMesa;
         this.nroVotantesRegistrados = nroVotantesRegistrados;
         this.nroVotantesEfectivos = nroVotantesEfectivos;
+        this.resultado = resultado;
         this.votosBlancos = votosBlancos;
         this.votosNulos = votosNulos;
         this.observaciones = observaciones;
         this.firmas = firmas;
         this.selloOf = selloOf;
         this.nroIdActa = nroIdActa;
-        this.resultado = resultado;
-        miembroDeMesa = new MiembroDeMesa[50];
-    }
-    //CONSTRUCTOR SIN PARAMETROS
-    public ActaElectoral() {
-    }
-    
+        // Inicializar arreglo de 6 miembros
+        this.miembroDeMesa = new MiembroDeMesa[6];
+        // llenar data
+        leerMiembroMesa();
+}
+
     //GETTERS
     public String getTitulo() {
         return titulo;
@@ -137,5 +138,19 @@ public class ActaElectoral {
     public void setNroIdActa(int nroIdActa) {
         this.nroIdActa = nroIdActa;
     }
-    
+    //Otro metodos
+    public void leerMiembroMesa(){
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < miembroDeMesa.length; i++) {
+            System.out.println("Miembro de mesa ["+(i+1)+"]");
+            System.out.println("Ingrese Nombres: ");
+            String nombre = sc.nextLine();
+            System.out.println("Ingrese Apellidos:  ");
+            String apellido = sc.nextLine();
+            System.out.println("Ingrese cargo: ");
+            String tipo = sc.nextLine();
+            MiembroDeMesa m1 = new MiembroDeMesa(nombre,apellido,tipo);
+            miembroDeMesa[i] = m1;
+        }
+    }
 }
