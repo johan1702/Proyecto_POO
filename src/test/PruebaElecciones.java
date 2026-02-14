@@ -10,7 +10,9 @@ public class PruebaElecciones {
             Hora h1 = new Hora(13,50);
             Candidato c1 = new Candidato("renato","quispe",939139,"lpp");
             ResultadoCandidato r1 = new ResultadoCandidato(c1,60,2);
-            ActaElectoral a1 = new ActaElectoral("jojna",f1,h1,"chorriyork",12,50,20,r1,4,2,"agresion",true,true,1);
-            
+            ResultadoCandidato[] res = new ResultadoCandidato[1];
+            res[0] = r1;
+            ActaElectoral a1 = new ActaElectoral("jojna",f1,h1,"chorriyork",12,50,20,res,4,2,"agresion",true,true,1);
+            a1.verInfo();
     }
 }

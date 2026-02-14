@@ -11,7 +11,7 @@ public class ActaElectoral {
     private MiembroDeMesa[] miembroDeMesa;
     private int nroVotantesRegistrados;
     private int nroVotantesEfectivos;
-    private ResultadoCandidato resultado;;
+    private ResultadoCandidato[] resultados;;
     private int votosBlancos;
     private int votosNulos;
     private String observaciones;
@@ -21,7 +21,7 @@ public class ActaElectoral {
     //Constructor OVERFLOW
     public ActaElectoral(String titulo, Fecha fecha, Hora hora, String lugar, 
         int nroIdMesa, int nroVotantesRegistrados, 
-        int nroVotantesEfectivos, ResultadoCandidato resultado, 
+        int nroVotantesEfectivos, ResultadoCandidato[] resultados, 
         int votosBlancos, int votosNulos, String observaciones, 
         boolean firmas, boolean selloOf, int nroIdActa) {
    
@@ -32,7 +32,7 @@ public class ActaElectoral {
         this.nroIdMesa = nroIdMesa;
         this.nroVotantesRegistrados = nroVotantesRegistrados;
         this.nroVotantesEfectivos = nroVotantesEfectivos;
-        this.resultado = resultado;
+        this.resultados = resultados;
         this.votosBlancos = votosBlancos;
         this.votosNulos = votosNulos;
         this.observaciones = observaciones;
@@ -69,9 +69,6 @@ public class ActaElectoral {
     }
     public int getNroVotantesEfectivos() {
         return nroVotantesEfectivos;
-    }
-    public String getResultadoCandidato() {
-        return resultado.verInfo();
     }
     public int getVotosBlancos() {
         return votosBlancos;
@@ -117,8 +114,8 @@ public class ActaElectoral {
     public void setNroVotantesEfectivos(int nroVotantesEfectivos) {
         this.nroVotantesEfectivos = nroVotantesEfectivos;
     }
-    public void setResultadoCandidato(ResultadoCandidato resultado) {
-        this.resultado = resultado;
+    public void setResultadoCandidato(ResultadoCandidato[] resultados) {
+        this.resultados = resultados;
     }
     public void setVotosBlancos(int votosBlancos) {
         this.votosBlancos = votosBlancos;
@@ -169,8 +166,21 @@ public class ActaElectoral {
     System.out.println("Votos Nulos: " + votosNulos);
 
     System.out.println("Observaciones: " + observaciones);
-    System.out.println("Firmas: " + (firmas ? "Si" : "No"));
-    System.out.println("Sello Oficial: " + (selloOf ? "Si" : "No"));
+    String resultado = "";
+    if(firmas){
+        resultado = "SI";
+    }
+    else{
+        resultado = "NO";
+    }
+    System.out.println("Firmas: " + resultado);
+    if(selloOf){
+        resultado = "SI";
+    }
+    else{
+        resultado = "NO";
+    }
+    System.out.println("Sello Oficial: " + resultado);
 
     // Mostrar miembros de mesa
     System.out.println("\n--- MIEMBROS DE MESA ---");
@@ -178,21 +188,17 @@ public class ActaElectoral {
         for (int i = 0; i < miembroDeMesa.length; i++) {
             if (miembroDeMesa[i] != null) {
                 System.out.println("Miembro [" + (i+1) + "]");
-                miembroDeMesa[i].verInfo();  // asume que existe
+                miembroDeMesa[i].mostrar();  
             }
         }
     }
 
     // Mostrar resultados por candidato
     System.out.println("\n--- RESULTADOS ---");
-    if (resultados != null) {
         for (int i = 0; i < resultados.length; i++) {
-            if (resultados[i] != null) {
-                resultados[i].verInfo();  // asume que existe
-            }
+            resultados[i].verInfo();  
+            
         }
-    }
-
     System.out.println("==========================");
 }
 

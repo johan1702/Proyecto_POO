@@ -85,4 +85,7 @@ public class Candidato {
         this.dni = 0;
         this.partido = null; 
     }
+    public void verInfo(){
+        System.out.println("");
+    }
 }
