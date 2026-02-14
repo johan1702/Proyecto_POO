@@ -1,0 +1,16 @@
+
+package test;
+import modelo.*;
+public class PruebaElecciones {
+    public static void main(String[] args) {
+        /*String titulo, Fecha fecha, Hora hora, String lugar, int nroIdMesa, int nroVotantesRegistrados, int nroVotantesEfectivos, ResultadoCandidato resultado, int votosBlancos, 
+        int votosNulos, String observaciones, 
+        boolean firmas, boolean selloOf, int nroIdActa*/
+            Fecha f1 = new Fecha(17,02,2007);
+            Hora h1 = new Hora(13,50);
+            Candidato c1 = new Candidato("renato","quispe",939139,"lpp");
+            ResultadoCandidato r1 = new ResultadoCandidato(c1,60,2);
+            ActaElectoral a1 = new ActaElectoral("jojna",f1,h1,"chorriyork",12,50,20,r1,4,2,"agresion",true,true,1);
+            
+    }
+}
