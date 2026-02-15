@@ -42,6 +42,9 @@ public class ResultadoCandidato {
     }
     
     public String verInfo(){
-        return "Candidato: " + candidato. + "\n Votos: " + votos + "\n Votos Preferenciales: " + votosPreferenciales + "\n";
+        return """
+               Candidato 
+               ......... 
+               """+candidato.verInfo() + "\n Votos: " + votos + "\n Votos Preferenciales: " + votosPreferenciales + "\n";
     }
 }
