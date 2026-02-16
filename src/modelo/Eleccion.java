@@ -2,61 +2,74 @@
 package modelo;
 
 public class Eleccion {
-    private int dia;
-    private int mes;
-    private int ano;
+    //ATRIBUTOS
+    private Fecha fecha;
     private String tipoEleccion;
-    ////////////// CANDIDATOS ASOCIACION UNA ELECCION TIENE VARIOS CANDIDATOS  /List<Candidato> candidatos;/////////////////
+    private Candidato[] candidatos;
+    private int cantidadCandidatos; 
     
-    //==================================CONSTRUCTORES=========================================//
-    public Eleccion(int dia, int mes, int ano, String tipoEleccion){
-        this.dia = dia;
-        this.mes = mes;
-        this.ano = ano;
+    //CONSTRUCTORES
+    public Eleccion(Fecha fecha, String tipoEleccion, int capacidad) {
+        this.fecha = fecha;
         this.tipoEleccion = tipoEleccion;
+        candidatos = new Candidato[capacidad];
+        cantidadCandidatos = 0;
     }
-    //===================================GETTERS==============================================//
-    public int getDia(){
-        return dia;
+    //GETTERS
+    public Fecha getFecha() {
+        return fecha;
     }
-    public int getMes(){
-        return mes;
-    }
-    public int getAno(){
-        return ano;
-    }
-    public String getTipoEleccion(){
+    public String getTipoEleccion() {
         return tipoEleccion;
     }
-    //====================================SETTERS==================================================//
-    public void setDia(int dia){
-        this.dia = dia;
+    public Candidato[] getCandidatos() {
+        return candidatos;
     }
-    public void setMes(int mes){
-        this.mes = mes;
+    public int getCantidadCandidatos() {
+        return cantidadCandidatos;
     }
-    public void setAno(int ano){
-        this.ano = ano;
+    
+    //SETTER
+    public void setFecha(Fecha fecha) {
+        this.fecha = fecha;
     }
-    public void setTipoEleccion(String tipoEleccion){
+    public void setTipoEleccion(String tipoEleccion) {
         this.tipoEleccion = tipoEleccion;
     }
-    //=====================================OTROS METODOS===========================================//
+    public void setCantidadCandidatos(int cantidadCandidatos) {
+        this.cantidadCandidatos = cantidadCandidatos;
+    }
     
-    /*  public Eleccion crearEleccion(){
-        Eleccion objEleccion1 = new Eleccion(dia, mes, ano, tipoEleccion);
-        return objEleccion1;
-    }*/
-    public void ModificarEleccion(int dia, int mes, int ano, String tipoEleccion){
-        this.dia = dia;
-        this.mes = mes;
-        this.ano = ano;
-        this.tipoEleccion = tipoEleccion; 
+    //OTROS METODOS
+    //AGREGAR CANDIDATOS A ELEECCIÓN    
+    public void agregarCandidato(Candidato c){
+        if(cantidadCandidatos < candidatos.length){
+            candidatos[cantidadCandidatos] = c;
+            cantidadCandidatos++;
+            System.out.println("Candidato agregado.");
+        }else {
+            System.out.println("No hay espacio para más candidatos.");
+        }
     }
-    public void EliminarEleccion(){
-        this.dia = 0;
-        this.mes = 0;
-        this.ano = 0;
-        this.tipoEleccion = null; 
+    
+    //MODIFICAR LA ELECCIÓN (FECHA Y TIPO)
+    public void modificarEleccion(Fecha nuevaFecha, String nuevoTipo) {
+        this.fecha = nuevaFecha;
+        this.tipoEleccion = nuevoTipo;
     }
+    
+    //ELIMINAR CANDIDATOS
+    public void eliminarCandidatoPorDni(int dni){
+    for (int i = 0; i < cantidadCandidatos; i++){
+        if(candidatos[i].getDni()== dni){
+            for(int j = i; j < cantidadCandidatos-1; j++){
+                candidatos[j] = candidatos[j+1];
+            }
+            candidatos[cantidadCandidatos-1] = null;
+            cantidadCandidatos--;
+            System.out.println("Candidato eliminado.");
+            return;
+        }
+    }
+    }   
 }
