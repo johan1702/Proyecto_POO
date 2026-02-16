@@ -46,7 +46,9 @@ public class MiembroDeMesa {
     
     //MOSTRAR INFORMACION
     public void mostrar(){
-        System.out.println("Nombre: "+ nombre + "\n Apellido: " + apellido + "\n Tipo: " + tipo);
+        System.out.println("Nombre: "+ nombre 
+                + "\n Apellido: " + apellido 
+                + "\n Tipo: " + tipo);
     }
     
     //

@@ -41,6 +41,7 @@ public class ActaElectoral {
         this.nroIdActa = nroIdActa;
         // Inicializar arreglo de 6 miembros
         this.miembroDeMesa = new MiembroDeMesa[6];
+        
         // llenar data
         leerMiembroMesa();
 }
@@ -144,14 +145,14 @@ public class ActaElectoral {
             String nombre = sc.nextLine();
             System.out.println("Ingrese Apellidos:  ");
             String apellido = sc.nextLine();
-            System.out.println("Ingrese cargo: ");
-            String tipo = sc.nextLine();
+            System.out.println("Ingrese tipo: ");
+            String tipo = sc.next();
             MiembroDeMesa m1 = new MiembroDeMesa(nombre,apellido,tipo);
             miembroDeMesa[i] = m1;
         }
     }
+    
     public void verInfo() {
-
     System.out.println("===== ACTA ELECTORAL =====");
     System.out.println("Titulo: " + titulo);
     System.out.println("Fecha: " + fecha);
