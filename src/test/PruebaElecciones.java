@@ -4,7 +4,7 @@ import modelo.*;
 import java.util.Scanner;
 public class PruebaElecciones {
     public static void main(String[] args) {
-         Candidato R1[] = RegistroCandidato.registarCandidatos();
+         /*Candidato R1[] = RegistroCandidato.registarCandidatos();
          ResultadoCandidato[] resultados = new ResultadoCandidato[R1.length];
          Scanner sc = new Scanner(System.in);
          for (int i = 0; i < R1.length; i++) {
@@ -19,7 +19,7 @@ public class PruebaElecciones {
              }
         }
          SistemaVotos.desgloseCandidatos(resultados);
-         
+        */ 
     }        
 }
     //-------------------------------PRUEBA 1----------------------------------//
