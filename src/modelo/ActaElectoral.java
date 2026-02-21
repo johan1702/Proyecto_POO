@@ -146,7 +146,7 @@ public class ActaElectoral {
             System.out.println("Ingrese Apellidos:  ");
             String apellido = sc.nextLine();
             System.out.println("Ingrese tipo: ");
-            String tipo = sc.next();
+            String tipo = sc.nextLine();
             MiembroDeMesa m1 = new MiembroDeMesa(nombre,apellido,tipo);
             miembroDeMesa[i] = m1;
         }
@@ -197,7 +197,7 @@ public class ActaElectoral {
     // Mostrar resultados por candidato
     System.out.println("\n--- RESULTADOS ---");
         for (int i = 0; i < resultados.length; i++) {
-            resultados[i].verInfo();  
+           System.out.println(resultados[i].verInfo());;  
             
         }
     System.out.println("==========================");

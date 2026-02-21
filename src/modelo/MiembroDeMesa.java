@@ -1,38 +1,25 @@
 
 package modelo;
-
-public class MiembroDeMesa {
+////////////////CLASE HIJA////////////
+public class MiembroDeMesa extends Persona {
     //ATRIBUTOS
-    private String nombre;
-    private String apellido;
     private String tipo;
     
-    //METODOS
+
     //CONSTRCUTOR CON PARAMETROS
-    public MiembroDeMesa(String nombre, String apellido, String tipo){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.tipo = tipo;
-    }
+public MiembroDeMesa(String nombre, String apellido, String tipo){
+    super(nombre, apellido);
+    this.tipo = tipo;
+}
     
     //GETTERS
-    public String getNombre(){
-        return nombre;
-    }
-    public String getApellido(){
-        return apellido;
-    }
+
     public String getTipo(){
         return tipo;
     }
     
     //SETTERS
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+   
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
@@ -46,9 +33,8 @@ public class MiembroDeMesa {
     
     //MOSTRAR INFORMACION
     public void mostrar(){
-        System.out.println("Nombre: "+ nombre 
-                + "\n Apellido: " + apellido 
-                + "\n Tipo: " + tipo);
+        System.out.println(mostrarPersona() + 
+                           "\nTipo: " + tipo);
     }
     
     //

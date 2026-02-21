@@ -11,7 +11,7 @@ public class Hora {
         hora = 1;
         minuto = 1;
     }
-
+//////GETERSS AND SETTERS//////
     public Hora(int hora, int minuto) {
         this.hora = hora;
         this.minuto = minuto;
@@ -20,6 +20,7 @@ public class Hora {
     public int getHora() {
         return hora;
     }
+    
     public void setHora(int hora) {
         this.hora = hora;
     }
@@ -27,10 +28,11 @@ public class Hora {
     public int getMinuto() {
         return minuto;
     }
-    public void setMes(int minuto) {
+
+    public void setMinuto(int minuto) {
         this.minuto = minuto;
     }
-    
+ 
     @Override
     public String toString() {
         return hora + ":" + minuto;

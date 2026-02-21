@@ -1,24 +1,18 @@
 
 package modelo;
-public class Candidato {
-    private String nombre;
-    private String apellido;
+public class Candidato extends Persona {
+    
+    ///////////////////CLASE HIJA////////////// 
     private int dni;
     private String partido;
     //==================================CONSTRUCTORES=========================================//
     public Candidato(String nombre, String apellido, int dni, String partido){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.partido = partido;
-    }
+    super(nombre, apellido);
+    this.dni = dni;
+    this.partido = partido;
+}
     //===================================GETTERS==============================================//
-    public String getNombre(){
-        return nombre;
-    }
-    public String getApellido(){
-        return apellido;
-    }
+
     public int getDni(){
         return dni;
     }
@@ -26,12 +20,7 @@ public class Candidato {
         return partido;
     }
     //====================================SETTERS==================================================//
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }
-    public void setApellido(String apellido){
-        this.apellido = apellido;
-    }
+    
     public void setDni(int dni){
         this.dni = dni;
     }
@@ -51,7 +40,10 @@ public class Candidato {
         this.dni = 0;
         this.partido = null; 
     }
+
     public String verInfo(){
-        return "Nombre: "+nombre + "\n Apellido: "+apellido+"\n Dni: "+dni+"\n Partido: "+partido;
-    }
+    return mostrarPersona() +
+           "\nDni: " + dni +
+           "\nPartido: " + partido;
+}
 }

@@ -6,7 +6,6 @@ public class MesaElectoral {
     //ATRIBUTOS
     private int idMesa;
     private MiembroDeMesa[] miembroDeMesa;
-    private int n; //cantidad de mesas
     
     //METODOS
     //CONSTRCUTOR CON PARAMETROS
@@ -35,7 +34,7 @@ public class MesaElectoral {
             System.out.println("Ingrese Apellidos:  ");
             String apellido = sc.nextLine();
             System.out.println("Ingrese tipo: ");
-            String tipo = sc.next();
+            String tipo = sc.nextLine();
             MiembroDeMesa m1 = new MiembroDeMesa(nombre,apellido,tipo);
             miembroDeMesa[i] = m1;
         }
@@ -43,7 +42,7 @@ public class MesaElectoral {
     
     public void mostrarMesa(){
         System.out.println("ID Mesa: " + idMesa);
-        for(int i = 0; i < n; i++){
+        for(int i = 0; i < this.miembroDeMesa.length; i++){
             miembroDeMesa[i].mostrar();
         }
     }
