@@ -15,9 +15,9 @@ public class PruebaElecciones {
 
 
         
-            /*-------------------------------PRUEBA 1----------------------------------//
+           /*/-------------------------------PRUEBA 1----------------------------------//
             Fecha f1 = new Fecha(17,02,2007);
-            Hora h1 = new Hora(13,50);1
+            Hora h1 = new Hora(13,50);
             Candidato c1 = new Candidato("renato","quispe",939139,"lpp");
             Candidato c2 = new Candidato("Luis","Perez",123456,"APRA");
             ResultadoCandidato r1 = new ResultadoCandidato(c1,60,2);
@@ -27,7 +27,7 @@ public class PruebaElecciones {
             res[1] = r2;
             ActaElectoral a1 = new ActaElectoral("jujen",f1,h1,"chorriyork",12,50,20,res,4,2,"agresion",true,true,1);
             a1.verInfo();
-          *////////////////////////////////////////////////////////////////
+          *///////////////////////////////////////////////////////////////
             
             
          

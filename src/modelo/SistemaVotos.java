@@ -11,7 +11,7 @@ public class SistemaVotos {
             if (resultados[i] != null) {
                 System.out.println("Candidato ["+(i+1)+"]");
                 System.out.println("-------------------------");
-                System.out.println(resultados[i].getCandidato().verInfo());
+                System.out.println(resultados[i].verInfo());
                 votos = votos + resultados[i].getVotos();
                 votosPreferenciales = votosPreferenciales + resultados[i].getVotosPreferenciales();
             }

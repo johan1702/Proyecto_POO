@@ -5,6 +5,9 @@ package modelo;
 import java.util.Scanner;
 
 public class MenuSistema {
+    private static ResultadoCandidato[] ultimosResultados;
+    private static int cantidadResultados = 0;
+    private static GestionCandidato gestion = new GestionCandidato();
 ///////METODO EJECUTAR/////
     public static void ejecutar() {
 
@@ -18,6 +21,7 @@ public class MenuSistema {
             System.out.println("3. Registrar Mesa Electoral");
             System.out.println("4. Registrar Acta Electoral");
             System.out.println("5. Ver Resultados");
+            System.out.println("6. Ver Candidatos");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opcion: ");
             opcion = sc.nextInt();
@@ -53,6 +57,7 @@ public class MenuSistema {
                     String partido = sc.nextLine();
 
                     Candidato candidato = new Candidato(nombre, apellido, dni, partido);
+                    gestion.agregar(candidato);
 
                     System.out.println("Candidato registrado.");
                     break;
@@ -76,18 +81,39 @@ public class MenuSistema {
 
                     ResultadoCandidato[] resultados = new ResultadoCandidato[1];
 
-                    Candidato c = new Candidato("Demo", "Demo", 11111111, "PartidoDemo");
+                    Candidato c = new Candidato("Maria Rosa", "Alberta Pepe", 202495423, "Apra");
                     resultados[0] = new ResultadoCandidato(c, 100, 10);
 
                     ActaElectoral acta = new ActaElectoral("Acta Oficial",f,h,"Lima",1,200,180,resultados,5,3,"Sin observaciones",true,true,1);
+                    
+                    ultimosResultados = resultados;
+                    
+                    cantidadResultados = resultados.length;
 
                     acta.verInfo();
                     break;
 
                 case 5:
                     System.out.println("=== RESULTADOS ===");
-                    System.out.println();
+                    if (ultimosResultados == null || cantidadResultados == 0) {
+                        System.out.println("No hay resultados registrados.");
+                         } else { SistemaVotos.desgloseCandidatos(ultimosResultados);
+                        
+                    }
                     break;
+                case 6:
+                    System.out.println("=== LISTA DE CANDIDATOS ===");
+                    if (gestion.longitud() == 0) { System.out.println("No hay candidatos");
+                    }else{ 
+                        for (int i = 0; i < gestion.longitud(); i++) {
+                        System.out.println("Candidato [" + (i+1) + "]");
+                        System.out.println(gestion.iesimo(i).verInfo());
+                            System.out.println();
+                        
+                    }
+                    }
+                    break;
+                    
 
                 case 0:
                     System.out.println("Saliendo del sistema.");
