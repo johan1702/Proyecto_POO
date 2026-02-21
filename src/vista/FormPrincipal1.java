@@ -9,6 +9,7 @@ package vista;
  * @author Nancy
  */
 public class FormPrincipal1 extends javax.swing.JPanel {
+    
 
     /**
      * Creates new form FormPrincipal
