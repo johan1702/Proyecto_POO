@@ -42,7 +42,7 @@ public class Candidato extends Persona {
     }
 
     public String verInfo(){
-    return mostrarPersona() +
+    return super.mostrarPersona() +
            "\nDni: " + dni +
            "\nPartido: " + partido;
 }

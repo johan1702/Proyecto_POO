@@ -197,7 +197,7 @@ public class ActaElectoral {
     // Mostrar resultados por candidato
     System.out.println("\n--- RESULTADOS ---");
         for (int i = 0; i < resultados.length; i++) {
-           System.out.println(resultados[i].verInfo());;  
+           System.out.println(resultados[i].verInfo());
             
         }
     System.out.println("==========================");

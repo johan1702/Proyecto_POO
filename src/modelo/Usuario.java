@@ -32,7 +32,7 @@ public class Usuario {
     
     
 
-    public boolean validar(String user, String pass) {
-        return this.usuario.equals(user) && this.contraseña.equals(pass);
+    public boolean validar(String usu, String contra) {
+        return this.usuario.equals(usu) && this.contraseña.equals(contra);
     }
 }

@@ -33,7 +33,7 @@ public MiembroDeMesa(String nombre, String apellido, String tipo){
     
     //MOSTRAR INFORMACION
     public void mostrar(){
-        System.out.println(mostrarPersona() + 
+        System.out.println(super.mostrarPersona() + 
                            "\nTipo: " + tipo);
     }
     

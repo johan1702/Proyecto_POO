@@ -39,9 +39,10 @@ public class Persona {
     
     
     
-    ///////////////METODO/////////////
-    
+    ///////////////METODO////////////
+   
      public String mostrarPersona() {
-        return "Nombre: " + nombre + "\nApellido: " + apellido;
+        return "\nNombre: " + nombre +
+               "\nApellido: " + apellido;
     }
 }

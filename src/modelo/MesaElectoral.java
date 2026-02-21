@@ -9,16 +9,13 @@ public class MesaElectoral {
     
     //METODOS
     //CONSTRCUTOR CON PARAMETROS
-    public MesaElectoral(int idMesa, int n){
+    public MesaElectoral(int idMesa){
         this.idMesa = idMesa;
         this.miembroDeMesa = new MiembroDeMesa[6];
         // llenar data
         registrarMiembroDeMesa();
     }
 
-    public MesaElectoral(int numeroMesa) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     //GETTERS AND SETTERS
     public int getIdme() {

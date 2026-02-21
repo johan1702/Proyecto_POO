@@ -9,12 +9,15 @@ public class PruebaElecciones {
         ///import modelo.SistemaAutenticacion;
         
         SistemaAutenticacion.iniciarSesion();
+        //////Usuario: Sistemas////////
+        //////Contraseña: 123//////////
+        MenuSistema.ejecutar();
 
 
         
             /*-------------------------------PRUEBA 1----------------------------------//
             Fecha f1 = new Fecha(17,02,2007);
-            Hora h1 = new Hora(13,50);
+            Hora h1 = new Hora(13,50);1
             Candidato c1 = new Candidato("renato","quispe",939139,"lpp");
             Candidato c2 = new Candidato("Luis","Perez",123456,"APRA");
             ResultadoCandidato r1 = new ResultadoCandidato(c1,60,2);
