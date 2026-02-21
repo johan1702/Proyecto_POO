@@ -5,7 +5,14 @@ import modelo.ResultadoCandidato;
 import java.util.Scanner;
 public class PruebaElecciones {
     public static void main(String[] args) {
-            //-------------------------------PRUEBA 1----------------------------------//
+        //////////////////////INTERFAZ ENTRADA USUARIO--CONTRASEÑA/////////////////////////////
+        ///import modelo.SistemaAutenticacion;
+        
+        SistemaAutenticacion.iniciarSesion();
+
+
+        
+            /*-------------------------------PRUEBA 1----------------------------------//
             Fecha f1 = new Fecha(17,02,2007);
             Hora h1 = new Hora(13,50);
             Candidato c1 = new Candidato("renato","quispe",939139,"lpp");
@@ -17,7 +24,7 @@ public class PruebaElecciones {
             res[1] = r2;
             ActaElectoral a1 = new ActaElectoral("jujen",f1,h1,"chorriyork",12,50,20,res,4,2,"agresion",true,true,1);
             a1.verInfo();
-            /////////////////////////////////////////////////////////////////
+          *////////////////////////////////////////////////////////////////
             
             
          
@@ -42,5 +49,5 @@ public class PruebaElecciones {
             
 
         
-    }        
-}
+    }      
+}  

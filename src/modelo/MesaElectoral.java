@@ -16,6 +16,10 @@ public class MesaElectoral {
         registrarMiembroDeMesa();
     }
 
+    public MesaElectoral(int numeroMesa) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     //GETTERS AND SETTERS
     public int getIdme() {
         return idMesa;

@@ -1,5 +1,6 @@
 
 package modelo;
+
 public class SistemaElectoral {
     private MesaElectoral[] mesas;
     private int cantidadMesas;
