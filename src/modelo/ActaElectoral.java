@@ -1,6 +1,5 @@
 
 package modelo;
-import java.util.Scanner;
 public class ActaElectoral {
     //ATRIBUTOS
     private String titulo;
@@ -42,8 +41,6 @@ public class ActaElectoral {
         // Inicializar arreglo de 6 miembros
         this.miembroDeMesa = new MiembroDeMesa[6];
         
-        // llenar data
-        leerMiembroMesa();
 }
 
     //GETTERS
@@ -135,63 +132,48 @@ public class ActaElectoral {
     }
     public void setNroIdActa(int nroIdActa) {
         this.nroIdActa = nroIdActa;
-    }
-    //Otro metodos
-    public void leerMiembroMesa(){
-        Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < miembroDeMesa.length; i++) {
-            System.out.println("Miembro de mesa ["+(i+1)+"]");
-            System.out.println("Ingrese Nombres: ");
-            String nombre = sc.nextLine();
-            System.out.println("Ingrese Apellidos:  ");
-            String apellido = sc.nextLine();
-            System.out.println("Ingrese tipo: ");
-            String tipo = sc.nextLine();
-            MiembroDeMesa m1 = new MiembroDeMesa(nombre,apellido,tipo);
-            miembroDeMesa[i] = m1;
-        }
-    }
+    } 
     
     public void verInfo() {
-    System.out.println("===== ACTA ELECTORAL =====");
-    System.out.println("Titulo: " + titulo);
-    System.out.println("Fecha: " + fecha);
-    System.out.println("Hora: " + hora);
-    System.out.println("Lugar: " + lugar);
-    System.out.println("Nro Mesa: " + nroIdMesa);
-    System.out.println("Nro Acta: " + nroIdActa);
+        System.out.println("===== ACTA ELECTORAL =====");
+        System.out.println("Titulo: " + titulo);
+        System.out.println("Fecha: " + fecha);
+        System.out.println("Hora: " + hora);
+        System.out.println("Lugar: " + lugar);
+        System.out.println("Nro Mesa: " + nroIdMesa);
+        System.out.println("Nro Acta: " + nroIdActa);
 
-    System.out.println("Votantes Registrados: " + nroVotantesRegistrados);
-    System.out.println("Votantes Efectivos: " + nroVotantesEfectivos);
-    System.out.println("Votos Blancos: " + votosBlancos);
-    System.out.println("Votos Nulos: " + votosNulos);
+        System.out.println("Votantes Registrados: " + nroVotantesRegistrados);
+        System.out.println("Votantes Efectivos: " + nroVotantesEfectivos);
+        System.out.println("Votos Blancos: " + votosBlancos);
+        System.out.println("Votos Nulos: " + votosNulos);
 
-    System.out.println("Observaciones: " + observaciones);
-    String resultado = "";
-    if(firmas){
-        resultado = "SI";
-    }
-    else{
-        resultado = "NO";
-    }
-    System.out.println("Firmas: " + resultado);
-    if(selloOf){
-        resultado = "SI";
-    }
-    else{
-        resultado = "NO";
-    }
-    System.out.println("Sello Oficial: " + resultado);
-
-    // Mostrar miembros de mesa
-    System.out.println("\n--- MIEMBROS DE MESA ---");
-    if (miembroDeMesa != null) {
-        for (int i = 0; i < miembroDeMesa.length; i++) {
-            if (miembroDeMesa[i] != null) {
-                System.out.println("Miembro [" + (i+1) + "]");
-                miembroDeMesa[i].mostrar();  
-            }
+        System.out.println("Observaciones: " + observaciones);
+        String resultado = "";
+        if(firmas){
+            resultado = "SI";
         }
+        else{
+            resultado = "NO";
+        }
+        System.out.println("Firmas: " + resultado);
+        if(selloOf){
+            resultado = "SI";
+        }
+        else{
+            resultado = "NO";
+        }
+        System.out.println("Sello Oficial: " + resultado);
+
+        // Mostrar miembros de mesa
+        System.out.println("\n--- MIEMBROS DE MESA ---");
+        if (miembroDeMesa != null) {
+            for (int i = 0; i < miembroDeMesa.length; i++) {
+                if (miembroDeMesa[i] != null) {
+                    System.out.println("Miembro [" + (i+1) + "]");
+                    miembroDeMesa[i].mostrar();  
+                }
+            }
     }
 
     // Mostrar resultados por candidato
