@@ -3,14 +3,14 @@ package test;
 import modelo.*;
 import modelo.ResultadoCandidato;
 import java.util.Scanner;
-import vista.FormPrincipal1;
+import vista.FormPrincipal;
 public class PruebaElecciones {
     public static void main(String[] args) {
         //////////////////////INTERFAZ ENTRADA USUARIO--CONTRASEÑA/////////////////////////////
         ///import modelo.SistemaAutenticacion;
         SistemaAutenticacion.iniciarSesion(); // tu login
 
-        new FormPrincipal1(); // abre GUI
+        new FormPrincipal(); // abre GUI
         ///SistemaAutenticacion.iniciarSesion();
         //////Usuario: Sistemas////////
         //////Contraseña: 123//////////

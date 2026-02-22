@@ -4,22 +4,12 @@
  */
 package vista;
 
-import javax.swing.JButton;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-
-/**
- *
- * @author Nancy
- */
 public class frmPanelCandidato extends javax.swing.JPanel {
 
     /**
      * Creates new form FrmLogin
      */
-    private JTextField txtUsuario;
-    private JPasswordField txtClave;
-    private JButton btnIngresar;
+ 
     public frmPanelCandidato() {
         initComponents();
     }
