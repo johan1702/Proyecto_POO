@@ -19,7 +19,7 @@ public class SistemaElectoral {
 
     public void eliminarMesaPorId(int id) {
         for (int i = 0; i < cantidadMesas; i++) {
-            if (mesas[i].getIdme() == id) {
+            if (mesas[i].getIdMesa() == id) {
                 for (int j = i; j < cantidadMesas - 1; j++) {
                     mesas[j] = mesas[j + 1];
                 }
