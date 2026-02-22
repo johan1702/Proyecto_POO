@@ -9,6 +9,13 @@ public class Eleccion {
     private int cantidadCandidatos; 
     
     //CONSTRUCTORES
+
+    public Eleccion() {
+                this.fecha = fecha;
+        this.tipoEleccion = "";
+    }
+    
+    
     public Eleccion(Fecha fecha, String tipoEleccion, int capacidad) {
         this.fecha = fecha;
         this.tipoEleccion = tipoEleccion;

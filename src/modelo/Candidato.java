@@ -46,4 +46,8 @@ public class Candidato extends Persona {
            "\nDni: " + dni +
            "\nPartido: " + partido;
 }
+    @Override
+public String toString() {
+    return nombre + " " + apellido;
+}
 }

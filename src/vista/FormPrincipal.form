@@ -8,6 +8,9 @@
       </Properties>
     </Component>
   </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="2"/>
   </SyntheticProperties>
@@ -67,8 +70,8 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="btnMesas" min="-2" pref="285" max="-2" attributes="0"/>
-                          <Component id="btnElecciones" min="-2" pref="285" max="-2" attributes="0"/>
                           <Component id="btnActa" alignment="1" min="-2" pref="285" max="-2" attributes="0"/>
+                          <Component id="btnCandidatos" min="-2" pref="285" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -76,7 +79,7 @@
                               <Component id="btnPartidos" pref="285" max="32767" attributes="0"/>
                               <Component id="btnMiembros" pref="285" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="btnCandidatos" alignment="1" min="-2" pref="285" max="-2" attributes="0"/>
+                          <Component id="btnElecciones" alignment="1" min="-2" pref="285" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -99,14 +102,14 @@
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnElecciones" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnPartidos" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnPartidos" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCandidatos" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnMesas" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnCandidatos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnElecciones" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -214,6 +217,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Gestionar Candidatos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCandidatosActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
