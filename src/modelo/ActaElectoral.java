@@ -171,7 +171,7 @@ public class ActaElectoral {
             for (int i = 0; i < miembroDeMesa.length; i++) {
                 if (miembroDeMesa[i] != null) {
                     System.out.println("Miembro [" + (i+1) + "]");
-                    miembroDeMesa[i].mostrar();  
+                    miembroDeMesa[i].verInfo();  
                 }
             }
     }

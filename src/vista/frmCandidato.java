@@ -3,6 +3,8 @@ package vista;
 import javax.swing.JOptionPane;
 import modelo.Candidato;
 import modelo.GestionCandidato;
+import modelo.PartidoPolitico;
+
 
 public class frmCandidato extends javax.swing.JFrame {
     
@@ -57,6 +59,11 @@ public class frmCandidato extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         btnEleccionResultados.setText("Resultados por Candidato");
+        btnEleccionResultados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEleccionResultadosActionPerformed(evt);
+            }
+        });
 
         btnMiembrodeMesa.setText("Elecciones");
         btnMiembrodeMesa.addActionListener(new java.awt.event.ActionListener() {
@@ -221,7 +228,8 @@ public class frmCandidato extends javax.swing.JFrame {
         String nombre = txtNombre.getText();
         String apellido = txtApellido.getText();
         int dni = Integer.parseInt(txtDni.getText());
-        PartidoPolitico partido = txtPartido.getText();
+        String nombrePartido = txtPartido.getText();
+        PartidoPolitico partido = new PartidoPolitico(nombrePartido, "", "", "");
 
         Candidato c = new Candidato(nombre, apellido, dni, partido);
 
@@ -243,6 +251,11 @@ public class frmCandidato extends javax.swing.JFrame {
       new frmEleccion().setVisible(true);
      this.dispose();  // TODO add your handling code here:
     }//GEN-LAST:event_btnMiembrodeMesaActionPerformed
+
+    private void btnEleccionResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEleccionResultadosActionPerformed
+       new frmResultados().setVisible(true);
+       this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_btnEleccionResultadosActionPerformed
 
     
   

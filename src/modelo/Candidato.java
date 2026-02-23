@@ -35,12 +35,7 @@ public class Candidato extends Persona {
         this.partido = partido; 
     }
     //CAMBIAR!!!!!!!!!!!!!!!!!!!!!!!!!!
-    public void EliminarCandidato(){
-        this.nombre = null;
-        this.apellido = null;
-        this.dni = 0;
-        this.partido = null; 
-    }
+ ////Falta eliminar///
     
     @Override
     public String verInfo(){

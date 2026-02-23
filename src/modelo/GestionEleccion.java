@@ -23,10 +23,10 @@ public class GestionEleccion {
         }
     }
     
-    public void modificarPorPosicion(int posicion, Fecha nuevaFecha, String nuevoTipo) {
-    if (posicion >= 0 && posicion < nro) {
-        elecciones[posicion].setFecha(nuevaFecha);
-        elecciones[posicion].setTipoEleccion(nuevoTipo);
+    public void modificarPorPosicion(int id, Fecha nuevaFecha, String nuevoTipo) {
+    if (id >= 0 && id < nro) {
+        elecciones[id].setFecha(nuevaFecha);
+        elecciones[id].setTipoEleccion(nuevoTipo);
     }
 }
     

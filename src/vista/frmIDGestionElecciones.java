@@ -6,7 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import modelo.Eleccion;
 import modelo.GestionEleccion;
-public class frmID extends javax.swing.JFrame {
+public class frmIDGestionElecciones extends javax.swing.JFrame {
     ArrayList<Eleccion> lista = new ArrayList<>();
     JTextField txtIdBuscar;
     JLabel lblMensaje;
@@ -15,7 +15,7 @@ JButton btnAceptar;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmID.class.getName());
     private GestionEleccion gestion;
  
-    public frmID() {
+    public frmIDGestionElecciones() {
         initComponents();
         this.gestion = gestion;
     }
