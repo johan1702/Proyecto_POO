@@ -42,7 +42,6 @@ public class Eleccion {
         return id;
     }
     
-    
     //SETTER
     public void setFecha(Fecha fecha) {
         this.fecha = fecha;
@@ -73,12 +72,7 @@ public class Eleccion {
             System.out.println("No hay espacio para más candidatos.");
         }
     }
-    
-    //MODIFICAR LA ELECCIÓN (FECHA Y TIPO)
-    public void modificarEleccion(Fecha nuevaFecha, String nuevoTipo) {
-        this.fecha = nuevaFecha;
-        this.tipoEleccion = nuevoTipo;
-    }
+
     
     //ELIMINAR CANDIDATOS
     public void eliminarCandidatoPorDni(int dni){

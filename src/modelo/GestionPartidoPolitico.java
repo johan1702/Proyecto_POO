@@ -3,35 +3,29 @@ package modelo;
 public class GestionPartidoPolitico {
 
     private PartidoPolitico[] partidos;
-    private int nro;
+    private int numero;
     private final static int MAX = 5;
 
     // Constructor
     public GestionPartidoPolitico() {
         partidos = new PartidoPolitico[MAX];
-        nro = 0;
+        numero = 0;
     }
 
     // AGREGAR PARTIDO
     public void agregarPartido(PartidoPolitico p) {
-        if (nro < MAX) {
-            partidos[nro] = p;
-            nro++;
+        if (numero < MAX) {
+            partidos[numero] = p;
+            numero++;
         } else {
             System.out.println("Memoria llena");
         }
     }
 
-    // MOSTRAR PARTIDOS
-    public void mostrarPartidos() {
-        for (int i = 0; i < nro; i++) {
-            System.out.println(partidos[i]);
-        }
-    }
 
     // MODIFICAR PARTIDO 
     public void modificarPartido(String nombreBuscado,String sigla,String logo,String representante) {
-        for (int i = 0; i < nro; i++) {
+        for (int i = 0; i < numero; i++) {
             if (partidos[i].getNombre().equals(nombreBuscado)) {
                 partidos[i].ModificarPartidoPolitico(nombreBuscado, sigla, logo, representante);
                 System.out.println("Partido modificado correctamente");
@@ -42,29 +36,61 @@ public class GestionPartidoPolitico {
     }
 
     // ELIMINAR PARTIDO 
-    public void eliminarPartido(String nombreBuscado) {
-        for (int i = 0; i < nro; i++) {
-            if (partidos[i].getNombre().equals(nombreBuscado)) {
-                for (int j = i; j < nro - 1; j++) {
-                    partidos[j] = partidos[j + 1];
-                }
-                nro--;
-                System.out.println("Partido eliminado correctamente");
+    public int buscarPorNombre(String nombre) {
+        for (int i = 0; i < numero; i++) {
+            if (partidos[i].getNombre().equalsIgnoreCase(nombre)) {
+                return i;  // devuelve la posición
             }
         }
-        System.out.println("No se encontró el partido");
+        return -1;  // no encontrado
     }
-
+    
+    public void eliminarPorNombre(String nombre) {
+        int pos = buscarPorNombre(nombre);
+        if (pos != -1) {
+            // mover elementos a la izquierda
+            for (int i = pos; i < numero-1; i++) {
+                partidos[i] = partidos[i + 1];
+            }
+            partidos[numero-1] = null;
+            numero--;
+            System.out.println("Partido eliminado correctamente");
+        }else{
+            System.out.println("Partido no encontrado");
+        }
+    }
+    
+    //MODIFICAR
+    public void modificarPorNombre(String nombreBuscado, String nuevoNombre, 
+            String nuevaSigla, String nuevoRepresentante) {
+        int pos = buscarPorNombre(nombreBuscado);
+        if (pos != -1) {
+            partidos[pos].setNombre(nuevoNombre);
+            partidos[pos].setSigla(nuevaSigla);
+            partidos[pos].setRepresentate(nuevoRepresentante);
+            System.out.println("Partido modificado correctamente");
+        }else {
+            System.out.println("Partido no encontrado");
+        }
+    }
+    
     // LONGITUD
     public int longitud() {
-        return nro;
+        return numero;
     }
 
     // IESIMO
     public PartidoPolitico iesimo(int pos) {
-        if (pos >= 0 && pos < nro) {
+        if (pos >= 0 && pos < numero) {
             return partidos[pos];
         }
         return null;
+    }
+    
+    // MOSTRAR PARTIDOS
+    public void mostrarPartidos() {
+        for (int i = 0; i < numero; i++) {
+            System.out.println(partidos[i]);
+        }
     }
 }

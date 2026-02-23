@@ -16,7 +16,7 @@ public class GestionCandidato {
         return numero;
     }
     
-    
+    //AGREGAR CANDIDATOS
     public void agregar(Candidato c){
         if (numero<MAX){
             candidatos[numero] = c;
@@ -25,50 +25,33 @@ public class GestionCandidato {
             System.out.println("ERROR:MEMORIA LLENA");
         }
     }
-    public String mostrarDatos(){
-        String mensaje = "";
+    
+    
+    //ELIMINAR POR DNI
+    public int buscarPorDni(int dni) {
         for (int i = 0; i < numero; i++) {
-            mensaje = mensaje+candidatos[i]+"\n";
+            if (candidatos[i].getDni() == dni) {
+                return i;  // devuelve la posición donde lo encontró
+            }
         }
-        return mensaje;
+        return -1;  // si no lo encuentra
     }
-    public int longitud(){
-        return numero;
-    }
-
-    public boolean eliminarPorDni(int dni) {
+    
+    public void eliminarPorDni(int dni) {
         int pos = buscarPorDni(dni);
-        if (pos == -1) {
-            return false;  // no encontrado
-        }
-    // mover elementos hacia la izquierda
-        for (int i = pos; i < numero - 1; i++) {
-            candidatos[i] = candidatos[i + 1];
-        }
-        candidatos[numero - 1] = null; // limpiar última posición
-        numero--;  // reducir cantidad
-        return true;
-        }
-    public void eliminar(int pos){
-        if (pos>=0 && pos<numero){
-            for (int i = pos; i <numero-1; i++) {
+        if (pos != -1) {
+            for (int i = pos; i < numero-1; i++) {
                 candidatos[i] = candidatos[i+1];
             }
+            candidatos[numero-1] = null; // para limpiar
             numero--;
-        }else{
-            System.out.println("Error: posicion no valida!!!");
+            System.out.println("Candidato eliminado correctamente");
+        }else {
+            System.out.println("Candidato no encontrado");
         }
     }
     
-        public int buscarPorDni(int dni) {
-    for (int i = 0; i < numero; i++) {
-        if (candidatos[i].getDni() == dni) {
-            return i;  // devuelve la posición donde lo encontró
-        }
-    }
-    return -1;  // si no lo encuentra
-}
-
+    //MODIFICAR
     public void modificarPorDni(int dni, String nuevoNombre,String nuevoApellido,PartidoPolitico nuevoPartido) {
         int pos = buscarPorDni(dni);
         if (pos != -1) {
@@ -79,5 +62,27 @@ public class GestionCandidato {
         } else {
             System.out.println("Candidato no encontrado");
         }
+    }
+    
+    // LONGITUD
+    public int longitud() {
+        return numero;
+    }
+
+    // IESIMO
+    public Candidato iesimo(int pos) {
+        if (pos >= 0 && pos < numero) {
+            return candidatos[pos];
+        }
+        return null;
+    }
+    
+    //MOSTRAR LOS DATOS
+    public String mostrarCandidatos(){
+        String mensaje = "";
+        for (int i = 0; i < numero; i++) {
+            mensaje = mensaje+candidatos[i]+"\n";
+        }
+        return mensaje;
     }
 }
