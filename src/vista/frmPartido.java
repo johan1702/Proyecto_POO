@@ -29,16 +29,16 @@ public class frmPartido extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        txtLogo = new javax.swing.JTextPane();
+        txtDescripcionlogo = new javax.swing.JTextPane();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextPane3 = new javax.swing.JTextPane();
         btnRegistrar = new javax.swing.JToggleButton();
         btnCandidato = new javax.swing.JToggleButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
+        btnMostrar = new javax.swing.JToggleButton();
+        btnEliminar = new javax.swing.JToggleButton();
+        btnModificar = new javax.swing.JToggleButton();
         jLabel7 = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
 
@@ -64,11 +64,16 @@ public class frmPartido extends javax.swing.JFrame {
 
         jLabel4.setText("Representante Legal");
 
-        jScrollPane4.setViewportView(txtLogo);
+        jScrollPane4.setViewportView(txtDescripcionlogo);
 
         jScrollPane5.setViewportView(jTextPane3);
 
         btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         btnCandidato.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         btnCandidato.setText("Ir a Candidatos");
@@ -80,16 +85,16 @@ public class frmPartido extends javax.swing.JFrame {
 
         jLabel5.setText("Partido Politico");
 
-        jToggleButton1.setText("Mostrar");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrar.setText("Mostrar");
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                btnMostrarActionPerformed(evt);
             }
         });
 
-        jToggleButton4.setText("Eliminar");
+        btnEliminar.setText("Eliminar");
 
-        jToggleButton5.setText("Modificar");
+        btnModificar.setText("Modificar");
 
         jLabel7.setText("Opciones");
 
@@ -136,12 +141,12 @@ public class frmPartido extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(74, 74, 74)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jToggleButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))
                                 .addGap(45, 45, 45)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jToggleButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))))
+                                    .addComponent(btnMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -188,14 +193,14 @@ public class frmPartido extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jToggleButton1))
+                        .addComponent(btnMostrar))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnRegistrar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton4)
-                    .addComponent(jToggleButton5))
+                    .addComponent(btnEliminar)
+                    .addComponent(btnModificar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCandidato)
                 .addContainerGap())
@@ -209,14 +214,18 @@ public class frmPartido extends javax.swing.JFrame {
         this.dispose();  // TODO add your handling code here:
     }//GEN-LAST:event_btnCandidatoActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
       new FormPrincipal().setVisible(true);
         this.dispose();  // TODO add your handling code here:
     }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
   
     public static void main(String args[]) {
@@ -243,6 +252,9 @@ public class frmPartido extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnCandidato;
+    private javax.swing.JToggleButton btnEliminar;
+    private javax.swing.JToggleButton btnModificar;
+    private javax.swing.JToggleButton btnMostrar;
     private javax.swing.JToggleButton btnRegistrar;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
@@ -260,11 +272,8 @@ public class frmPartido extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextPane jTextPane3;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JTextPane txtLogo;
+    private javax.swing.JTextPane txtDescripcionlogo;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextPane txtSigla;
     // End of variables declaration//GEN-END:variables
