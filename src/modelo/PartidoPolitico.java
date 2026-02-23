@@ -52,6 +52,7 @@ public class PartidoPolitico {
         this.logo = null;
         this.representante = null; 
     }
+     
     public String verInfo(){
         return "Nombre: " + nombre + "\n Siglas: " + sigla + "\n Descripcion logo: " + logo + "\n Representante legal: " + representante + "\n";
     }

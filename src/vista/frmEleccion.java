@@ -69,6 +69,7 @@ private void cargarCandidatos() {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         jLabel2 = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JToggleButton();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -143,6 +144,13 @@ private void cargarCandidatos() {
 
         jLabel2.setText("ID");
 
+        btnRegresar.setText("<--");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -196,15 +204,19 @@ private void cargarCandidatos() {
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(95, 95, 95))))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(135, 135, 135)
+                .addGap(17, 17, 17)
+                .addComponent(btnRegresar)
+                .addGap(66, 66, 66)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1)
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(btnRegresar))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -267,6 +279,11 @@ private void cargarCandidatos() {
         this.dispose();   // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+    new frmCandidato().setVisible(true);
+     this.dispose();    // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -293,6 +310,7 @@ private void cargarCandidatos() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnRegresar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<Candidato> cmbCandidatos;
     private javax.swing.JComboBox<Candidato> cmbCandidatos1;
