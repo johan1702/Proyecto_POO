@@ -53,4 +53,21 @@ public class GestionMesas {
             System.out.println("Error: posicion no valida!!!");
         }
     }
+    
+public void modificar(int pos, MesaElectoral nuevaMesa) {
+    if (pos >= 0 && pos < nro) {
+        mesas[pos] = nuevaMesa;
+        System.out.println("Mesa modificada correctamente.");
+    } else {
+        System.out.println("Error: posición no válida.");
+    }
 }
+}
+    
+    
+    
+    
+    
+
+    
+

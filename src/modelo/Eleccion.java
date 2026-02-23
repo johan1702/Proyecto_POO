@@ -7,20 +7,22 @@ public class Eleccion {
     private String tipoEleccion;
     private Candidato[] candidatos;
     private int cantidadCandidatos; 
+    public int id; ////para modificar////
     
     //CONSTRUCTORES
 
     public Eleccion() {
-                this.fecha = fecha;
+        this.fecha = fecha;
         this.tipoEleccion = "";
     }
     
     
-    public Eleccion(Fecha fecha, String tipoEleccion, int capacidad) {
+    public Eleccion(Fecha fecha, String tipoEleccion, int capacidad, int id) {
         this.fecha = fecha;
         this.tipoEleccion = tipoEleccion;
         candidatos = new Candidato[capacidad];
         cantidadCandidatos = 0;
+        this.id=id;
     }
     //GETTERS
     public Fecha getFecha() {
@@ -35,6 +37,11 @@ public class Eleccion {
     public int getCantidadCandidatos() {
         return cantidadCandidatos;
     }
+
+    public int getId() {
+        return id;
+    }
+    
     
     //SETTER
     public void setFecha(Fecha fecha) {
@@ -45,6 +52,14 @@ public class Eleccion {
     }
     public void setCantidadCandidatos(int cantidadCandidatos) {
         this.cantidadCandidatos = cantidadCandidatos;
+    }
+
+    public void setCandidatos(Candidato[] candidatos) {
+        this.candidatos = candidatos;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     //OTROS METODOS
