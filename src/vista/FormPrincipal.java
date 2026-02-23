@@ -2,10 +2,11 @@
 package vista;
 
 import modelo.GestionCandidato;
+import modelo.GestionPartidoPolitico;
 
 public class FormPrincipal extends javax.swing.JFrame {
     public static GestionCandidato gestionCandidatos = new GestionCandidato();
-
+public static GestionPartidoPolitico gestionPartidos = new GestionPartidoPolitico();
     public FormPrincipal() {
         initComponents();
     }

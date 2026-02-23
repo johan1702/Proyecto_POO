@@ -1,13 +1,19 @@
 
 package vista;
+import modelo.PartidoPolitico;
+import modelo.GestionPartidoPolitico;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
 
 public class frmPartido extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmPartido.class.getName());
 
   
-    public frmPartido() {
+     public frmPartido() {
         initComponents();
     }
 
@@ -31,7 +37,7 @@ public class frmPartido extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         txtDescripcionlogo = new javax.swing.JTextPane();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
+        txtRepresentante = new javax.swing.JTextPane();
         btnRegistrar = new javax.swing.JToggleButton();
         btnCandidato = new javax.swing.JToggleButton();
         jLabel5 = new javax.swing.JLabel();
@@ -66,7 +72,7 @@ public class frmPartido extends javax.swing.JFrame {
 
         jScrollPane4.setViewportView(txtDescripcionlogo);
 
-        jScrollPane5.setViewportView(jTextPane3);
+        jScrollPane5.setViewportView(txtRepresentante);
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -224,7 +230,18 @@ public class frmPartido extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
+                
+        String nombre = txtNombre.getText();
+        String sigla = txtSigla.getText();
+        String logo = txtDescripcionlogo.getText();
+        String representante = txtRepresentante.getText();
+
+        PartidoPolitico p = new PartidoPolitico(nombre,sigla,logo,representante);
+
+        FormPrincipal.gestionPartidos.agregarPartido(p);
+
+        JOptionPane.showMessageDialog(this, "Partido registrado correctamente");
+              // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
   
@@ -271,10 +288,10 @@ public class frmPartido extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextPane jTextPane3;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JTextPane txtDescripcionlogo;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextPane txtRepresentante;
     private javax.swing.JTextPane txtSigla;
     // End of variables declaration//GEN-END:variables
 }

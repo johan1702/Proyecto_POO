@@ -34,6 +34,7 @@ public class Candidato extends Persona {
         this.dni = dni;
         this.partido = partido; 
     }
+    
     //CAMBIAR!!!!!!!!!!!!!!!!!!!!!!!!!!
  ////Falta eliminar///
     
