@@ -5,13 +5,13 @@ public class PartidoPolitico {
     private String nombre;
     private String sigla;
     private String logo; 
-    private String representate;
+    private String representante;
     //==================================CONSTRUCTORES=========================================//
-    public PartidoPolitico(String nombre, String sigla, String logo, String representate){
+    public PartidoPolitico(String nombre, String sigla, String logo, String representante){
         this.nombre = nombre;
         this.sigla = sigla;
         this.logo = logo;
-        this.representate = representate;
+        this.representante = representante;
     }
     //===================================GETTERS==============================================//
     public String getNombre(){
@@ -23,8 +23,8 @@ public class PartidoPolitico {
     public String getLogo(){
         return logo;
     }
-    public String getRepresentate(){
-        return representate;
+    public String getRepresentante(){
+        return representante;
     }
     //====================================SETTERS==================================================//
     public void setNombre(String nombre){
@@ -36,20 +36,23 @@ public class PartidoPolitico {
     public void setLogo(String logo){
         this.logo = logo;
     }
-    public void setRepresentate(String representate){
-        this.representate = representate;
+    public void setRepresentate(String representante){
+        this.representante = representante;
     }
     //=====================================OTROS METODOS===========================================//
-    public void ModificarPartidoPolitico(String nombre, String sigla, String logo, String representate){
+    public void ModificarPartidoPolitico(String nombre, String sigla, String logo, String representante){
         this.nombre = nombre;
         this.sigla = sigla;
         this.logo = logo;
-        this.representate = representate; 
+        this.representante = representante; 
     }
      public void EliminarPartidoPolitico(){
         this.nombre = null;
         this.sigla = null;
         this.logo = null;
-        this.representate = null; 
+        this.representante = null; 
+    }
+    public String verInfo(){
+        return "Nombre: " + nombre + "\n Siglas: " + sigla + "\n Descripcion logo: " + logo + "\n Representante legal: " + representante + "\n";
     }
 }

@@ -129,6 +129,16 @@ public Eleccion buscarPorId(String idBuscado) {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+     for (int i = 0; i < nro; i++) {
+        if (elecciones[i].getId() == idBuscado) {
+            return true;
+        }
+    }
+
+        return false;
+        
+    //si esta el id pasamos al otro form
+    
      new frmElecciones2().setVisible(true);
      this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_btnAceptarActionPerformed

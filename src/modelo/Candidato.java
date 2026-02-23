@@ -4,9 +4,9 @@ public class Candidato extends Persona {
     
     ///////////////////CLASE HIJA////////////// 
     private int dni;
-    private String partido;
+    private PartidoPolitico partido;
     //==================================CONSTRUCTORES=========================================//
-    public Candidato(String nombre, String apellido, int dni, String partido){
+    public Candidato(String nombre, String apellido, int dni, PartidoPolitico partido){
     super(nombre, apellido);
     this.dni = dni;
     this.partido = partido;
@@ -16,7 +16,7 @@ public class Candidato extends Persona {
     public int getDni(){
         return dni;
     }
-    public String getPartido(){
+    public PartidoPolitico getPartido(){
         return partido;
     }
     //====================================SETTERS==================================================//
@@ -24,27 +24,27 @@ public class Candidato extends Persona {
     public void setDni(int dni){
         this.dni = dni;
     }
-    public void setPartido(String partido){
+    public void setPartido(PartidoPolitico partido){
         this.partido = partido;
     }
     //=====================================OTROS METODOS===========================================//
-    public void ModificarCandidato(String nombre, String apellido, int dni, String partido){
+    public void ModificarCandidato(String nombre, String apellido, int dni, PartidoPolitico partido){
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.partido = partido; 
     }
+    //CAMBIAR!!!!!!!!!!!!!!!!!!!!!!!!!!
     public void EliminarCandidato(){
         this.nombre = null;
         this.apellido = null;
         this.dni = 0;
         this.partido = null; 
     }
-
+    
+    @Override
     public String verInfo(){
-    return super.mostrarPersona() +
-           "\nDni: " + dni +
-           "\nPartido: " + partido;
+    return super.verInfo() + "\n Dni: " + dni + " \n Partido: " + partido.verInfo();
 }
     @Override
 public String toString() {

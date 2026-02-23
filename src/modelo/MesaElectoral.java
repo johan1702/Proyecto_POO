@@ -33,7 +33,7 @@ public class MesaElectoral {
     public void mostrarMesa() {
         System.out.println("ID Mesa: " + idMesa);
         for (int i = 0; i < nro; i++) {
-            miembros[i].mostrar();
+            miembros[i].verInfo();
         }
     }
 }

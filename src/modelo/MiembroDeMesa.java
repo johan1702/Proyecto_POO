@@ -32,9 +32,9 @@ public MiembroDeMesa(String nombre, String apellido, String tipo){
     }
     
     //MOSTRAR INFORMACION
-    public void mostrar(){
-        System.out.println(super.mostrarPersona() + 
-                           "\nTipo: " + tipo);
+    @Override
+    public String verInfo(){
+        return super.verInfo() + "\n Tipo: " + tipo + "\n";
     }
     
     //

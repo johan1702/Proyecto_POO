@@ -1,7 +1,7 @@
 
 package modelo;
 /////////////CLASE PADRE/////////////////
-public class Persona {
+public class  Persona {
     protected String nombre;
     protected String apellido;
 ////CONSTRUCTOR SIN PARAMETRO////
@@ -10,8 +10,6 @@ public class Persona {
         this.apellido = "";
     }
 
-    
-    
    //////CONSTRUCTOR CON PARAMETROS//////
     public Persona(String nombre, String apellido) {
         this.nombre = nombre;
@@ -41,8 +39,9 @@ public class Persona {
     
     ///////////////METODO////////////
    
-     public String mostrarPersona() {
-        return "\nNombre: " + nombre +
-               "\nApellido: " + apellido;
-    }
+     public String verInfo(){
+        return "Nombre: " + nombre + "\nApellido: " + apellido;
+     }
+    
+    
 }
