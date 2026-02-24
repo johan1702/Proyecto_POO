@@ -41,7 +41,7 @@ public class ActaElectoral {
         // Inicializar arreglo de 6 miembros
         this.miembroDeMesa = new MiembroDeMesa[6];
         
-}
+    }
 
     //GETTERS
     public String getTitulo() {

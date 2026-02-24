@@ -1,67 +1,84 @@
 
 package modelo;
-
 public class GestionMesas {
-    // Atributos
+    // ATRIBUTOS
     private MesaElectoral[] mesas;
-    private int nro; // nro. de productos
+    private int numero; // nro. de productos
     private final static int MAX = 5;
-    // metodos
+    
+    // CONSTRUCTOR
     public GestionMesas(){
         mesas = new MesaElectoral[MAX];
-        nro = 0;
+        numero = 0;
     }
 
     public int getNro() {
-        return nro;
+        return numero;
     }
     
-    
-    public void agregar(MesaElectoral o1){
-        if (nro<MAX){
-            mesas[nro] = o1;
-            nro++;
+    //AGREGAR MESA
+    public void agregarMesa(MesaElectoral m){
+        if (numero<MAX){
+            mesas[numero] = m;
+            numero++;
         }else{
             System.out.println("ERROR:MEMORIA LLENA");
         }
     }
-    public String mostrarDatos(){
-        String mensaje = "";
-        for (int i = 0; i < nro; i++) {
-            mensaje = mensaje+mesas[i]+"\n";
+    
+    //MODIFICAR
+    public void modificarPorPosicion(int pos, int nuevoId) {
+        if (pos >= 0 && pos < numero) {
+            mesas[pos].setIdMesa(nuevoId);
+        }else{
+            System.out.println("Mesa no encontrada");
         }
-        return mensaje;
     }
+    
+    /* BUSCAR POR ID
+    public MesaElectoral buscarPorId(int id) {
+        for (int i = 0; i < numero; i++) {
+            if (mesas[i].getIdMesa()== id) {
+                return mesas[i];
+            }
+        }
+        return null;
+    }*/
+    
+    //ELIMINAR
+    public void eliminarMesa(int pos){
+        if (pos>=0 && pos<numero){
+            for (int i = pos; i <numero-1; i++) {
+                mesas[i] = mesas[i+1];
+            }
+            numero--;
+        }else{
+            System.out.println("Error: posicion no valida!!!");
+        }
+    }
+    
+    //LONGITUD
     public int longitud(){
-        return nro;
+        return numero;
     }
+    
+    //IESIMO
     public MesaElectoral iesimo(int pos){
-        if (pos>=0 && pos<nro){
+        if (pos>=0 && pos<numero){
             return mesas[pos];
         }else{
             return null;
         }
     }
     
-    public void eliminar(int pos){
-        if (pos>=0 && pos<nro){
-            for (int i = pos; i <nro-1; i++) {
-                mesas[i] = mesas[i+1];
-            }
-            nro--;
-        }else{
-            System.out.println("Error: posicion no valida!!!");
+    //MOSTRAR
+    public String mostrarMesas(){
+        String mensaje = "";
+        for (int i = 0; i < numero; i++) {
+            mensaje = mensaje+mesas[i]+"\n";
         }
+        return mensaje;
     }
-    
-public void modificar(int pos, MesaElectoral nuevaMesa) {
-    if (pos >= 0 && pos < nro) {
-        mesas[pos] = nuevaMesa;
-        System.out.println("Mesa modificada correctamente.");
-    } else {
-        System.out.println("Error: posición no válida.");
-    }
-}
 }
     
     

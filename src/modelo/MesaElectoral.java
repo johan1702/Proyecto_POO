@@ -1,38 +1,66 @@
 package modelo;
 
 public class MesaElectoral {
-
     // ATRIBUTOS
     private int idMesa;
     private MiembroDeMesa[] miembros;
-    private int nro;
-
+    private int numero;
+     private final static int MAX = 3;
+    
     // CONSTRUCTOR
     public MesaElectoral(int idMesa) {
         this.idMesa = idMesa;
-        this.miembros = new MiembroDeMesa[6];
-        this.nro = 0;
+        this.miembros = new MiembroDeMesa[MAX];
+        this.numero = 0;
     }
 
-    // GETTERS
+    // GETTER
     public int getIdMesa() {
         return idMesa;
+    }
+    
+    //SETTER
+    public void setIdMesa(int idMesa) {
+        this.idMesa = idMesa;
+    }
+    
+    //IESIMO
+    public MiembroDeMesa iesimo(int pos) {
+        if (pos >= 0 && pos < numero) {
+            return miembros[pos];
+        }
+        return null;
+    }
+    
+    // LONGITUD
+    public int longitud() {
+        return numero;
     }
 
     // AGREGAR MIEMBRO
     public void agregarMiembro(MiembroDeMesa m) {
-        if (nro < miembros.length) {
-            miembros[nro] = m;
-            nro++;
+        if (numero < MAX) {
+            miembros[numero] = m;
+            numero++;
         } else {
             System.out.println("Mesa llena");
         }
     }
+    
+    //ELIMINAR MIEMBRO
+    public void quitarMiembro(int pos) {
+        if (pos >= 0 && pos < numero) {
+            for (int i = pos; i < numero - 1; i++) {
+                miembros[i] = miembros[i+1];
+            }
+            numero--;
+        }
+    }
 
     // MOSTRAR
-    public void mostrarMesa() {
+    public void verInfo() {
         System.out.println("ID Mesa: " + idMesa);
-        for (int i = 0; i < nro; i++) {
+        for (int i = 0; i < numero; i++) {
             miembros[i].verInfo();
         }
     }

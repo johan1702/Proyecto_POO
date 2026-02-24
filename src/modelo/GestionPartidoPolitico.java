@@ -1,12 +1,11 @@
 package modelo;
 
 public class GestionPartidoPolitico {
-
     private PartidoPolitico[] partidos;
     private int numero;
     private final static int MAX = 5;
 
-    // Constructor
+    // CONSTRUCTOR
     public GestionPartidoPolitico() {
         partidos = new PartidoPolitico[MAX];
         numero = 0;
@@ -22,20 +21,7 @@ public class GestionPartidoPolitico {
         }
     }
 
-
-    // MODIFICAR PARTIDO 
-    public void modificarPartido(String nombreBuscado,String sigla,String logo,String representante) {
-        for (int i = 0; i < numero; i++) {
-            if (partidos[i].getNombre().equals(nombreBuscado)) {
-                partidos[i].ModificarPartidoPolitico(nombreBuscado, sigla, logo, representante);
-                System.out.println("Partido modificado correctamente");
-                return;
-            }
-        }
-        System.out.println("No se encontró el partido");
-    }
-
-    // ELIMINAR PARTIDO 
+    //MODIFICAR
     public int buscarPorNombre(String nombre) {
         for (int i = 0; i < numero; i++) {
             if (partidos[i].getNombre().equalsIgnoreCase(nombre)) {
@@ -44,23 +30,6 @@ public class GestionPartidoPolitico {
         }
         return -1;  // no encontrado
     }
-    
-    public void eliminarPorNombre(String nombre) {
-        int pos = buscarPorNombre(nombre);
-        if (pos != -1) {
-            // mover elementos a la izquierda
-            for (int i = pos; i < numero-1; i++) {
-                partidos[i] = partidos[i + 1];
-            }
-            partidos[numero-1] = null;
-            numero--;
-            System.out.println("Partido eliminado correctamente");
-        }else{
-            System.out.println("Partido no encontrado");
-        }
-    }
-    
-    //MODIFICAR
     public void modificarPorNombre(String nombreBuscado, String nuevoNombre, 
             String nuevaSigla, String nuevoRepresentante) {
         int pos = buscarPorNombre(nombreBuscado);
@@ -73,6 +42,20 @@ public class GestionPartidoPolitico {
             System.out.println("Partido no encontrado");
         }
     }
+
+    
+    //ELIMINAR
+    public void eliminarPartido(int pos) {
+        if (pos >=0 && pos <numero){
+            for (int i = pos; i < numero-1; i++) {
+                partidos[i] = partidos[i+1];
+            }
+            numero--;
+        }else{
+            System.out.println("Partido no encontrado");
+        }
+    }
+    
     
     // LONGITUD
     public int longitud() {

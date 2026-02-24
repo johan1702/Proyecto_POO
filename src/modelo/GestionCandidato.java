@@ -37,16 +37,13 @@ public class GestionCandidato {
         return -1;  // si no lo encuentra
     }
     
-    public void eliminarPorDni(int dni) {
-        int pos = buscarPorDni(dni);
-        if (pos != -1) {
+    public void eliminarCandidato(int pos) {
+        if (pos >=0 && pos <numero){
             for (int i = pos; i < numero-1; i++) {
                 candidatos[i] = candidatos[i+1];
             }
-            candidatos[numero-1] = null; // para limpiar
             numero--;
-            System.out.println("Candidato eliminado correctamente");
-        }else {
+        }else{
             System.out.println("Candidato no encontrado");
         }
     }

@@ -62,30 +62,8 @@ public class Eleccion {
     }
     
     //OTROS METODOS
-    //AGREGAR CANDIDATOS A ELEECCIÓN    
-    public void agregarCandidato(Candidato c){
-        if(cantidadCandidatos < candidatos.length){
-            candidatos[cantidadCandidatos] = c;
-            cantidadCandidatos++;
-            System.out.println("Candidato agregado.");
-        }else {
-            System.out.println("No hay espacio para más candidatos.");
-        }
-    }
-
     
-    //ELIMINAR CANDIDATOS
-    public void eliminarCandidatoPorDni(int dni){
-    for (int i = 0; i < cantidadCandidatos; i++){
-        if(candidatos[i].getDni()== dni){
-            for(int j = i; j < cantidadCandidatos-1; j++){
-                candidatos[j] = candidatos[j+1];
-            }
-            candidatos[cantidadCandidatos-1] = null;
-            cantidadCandidatos--;
-            System.out.println("Candidato eliminado.");
-            return;
-        }
-    }
-    }   
+
 }
+    
+

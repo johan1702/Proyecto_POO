@@ -31,13 +31,7 @@ public class  Persona {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    
-    
-    
-    
-    
-    
-    ///////////////METODO////////////
+    //////////METODO////////////
    
      public String verInfo(){
         return "Nombre: " + nombre + "\nApellido: " + apellido;
