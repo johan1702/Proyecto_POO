@@ -14,7 +14,9 @@ public class frmPartido extends javax.swing.JFrame {
 
   
      public frmPartido() {
+         
         initComponents();
+        setLocationRelativeTo(null);
     }
 
 
@@ -240,7 +242,7 @@ public class frmPartido extends javax.swing.JFrame {
 
         FormPrincipal.gestionPartidos.agregarPartido(p);
 
-        JOptionPane.showMessageDialog(this, "Partido registrado correctamente");
+        JOptionPane.showMessageDialog(rootPane, "Partido registrado correctamente");
               // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarActionPerformed
 

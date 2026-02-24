@@ -3,12 +3,18 @@ package vista;
 
 import modelo.GestionCandidato;
 import modelo.GestionPartidoPolitico;
+import modelo.GestionResultadoCandidato;
+import modelo.GestionMesas;
 
 public class FormPrincipal extends javax.swing.JFrame {
+    public static GestionMesas gestionMesas = new GestionMesas();
     public static GestionCandidato gestionCandidatos = new GestionCandidato();
-public static GestionPartidoPolitico gestionPartidos = new GestionPartidoPolitico();
+    public static GestionPartidoPolitico gestionPartidos = new GestionPartidoPolitico();
+    public static GestionResultadoCandidato gestionResultados = new GestionResultadoCandidato();
     public FormPrincipal() {
         initComponents();
+        pack();
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -39,7 +45,7 @@ public static GestionPartidoPolitico gestionPartidos = new GestionPartidoPolitic
             }
         });
 
-        btnMiembros.setText("Gestionar Miembros de Mesa ");
+        btnMiembros.setText("Gestionar Mesa electoral");
         btnMiembros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMiembrosActionPerformed(evt);

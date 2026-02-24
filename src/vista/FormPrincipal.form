@@ -116,7 +116,7 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnMiembros">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Gestionar Miembros de Mesa "/>
+        <Property name="text" type="java.lang.String" value="Gestionar Mesa electoral"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMiembrosActionPerformed"/>

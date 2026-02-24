@@ -1,67 +1,49 @@
 package modelo;
 
 public class MesaElectoral {
-    // ATRIBUTOS
+
     private int idMesa;
     private MiembroDeMesa[] miembros;
-    private int numero;
-     private final static int MAX = 3;
-    
-    // CONSTRUCTOR
+    private int nro;
+
+    public static final int MAX = 6;
+
     public MesaElectoral(int idMesa) {
         this.idMesa = idMesa;
-        this.miembros = new MiembroDeMesa[MAX];
-        this.numero = 0;
+        miembros = new MiembroDeMesa[MAX];
+        nro = 0;
     }
 
-    // GETTER
     public int getIdMesa() {
         return idMesa;
     }
-    
-    //SETTER
-    public void setIdMesa(int idMesa) {
-        this.idMesa = idMesa;
+
+    public void agregarMiembro(MiembroDeMesa m) {
+
+        if (nro < MAX) {
+            miembros[nro] = m;
+            nro++;
+        }
     }
-    
-    //IESIMO
-    public MiembroDeMesa iesimo(int pos) {
-        if (pos >= 0 && pos < numero) {
-            return miembros[pos];
+
+    public int getCantidad() {
+        return nro;
+    }
+
+    public MiembroDeMesa getMiembro(int i) {
+        if (i >= 0 && i < nro) {
+            return miembros[i];
         }
         return null;
     }
-    
-    // LONGITUD
-    public int longitud() {
-        return numero;
-    }
 
-    // AGREGAR MIEMBRO
-    public void agregarMiembro(MiembroDeMesa m) {
-        if (numero < MAX) {
-            miembros[numero] = m;
-            numero++;
-        } else {
-            System.out.println("Mesa llena");
-        }
-    }
-    
-    //ELIMINAR MIEMBRO
-    public void quitarMiembro(int pos) {
-        if (pos >= 0 && pos < numero) {
-            for (int i = pos; i < numero - 1; i++) {
-                miembros[i] = miembros[i+1];
-            }
-            numero--;
-        }
-    }
+    public String mostrarMiembros() {
+        String info = "Mesa: " + idMesa + "\n";
 
-    // MOSTRAR
-    public void verInfo() {
-        System.out.println("ID Mesa: " + idMesa);
-        for (int i = 0; i < numero; i++) {
-            miembros[i].verInfo();
+        for (int i = 0; i < nro; i++) {
+            info += miembros[i].verInfo() + "\n";
         }
+
+        return info;
     }
 }

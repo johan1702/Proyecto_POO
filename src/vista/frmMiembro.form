@@ -34,7 +34,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+              <Component id="btnRegistrar" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
@@ -42,7 +42,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnModificar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnEliminar" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -64,7 +64,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                              <Component id="jTextField1" min="-2" pref="83" max="-2" attributes="0"/>
+                              <Component id="txtNombre" min="-2" pref="83" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -74,7 +74,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="btnApellido" min="-2" pref="74" max="-2" attributes="0"/>
+                              <Component id="txtApellido" min="-2" pref="83" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -99,7 +99,7 @@
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="57" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -118,8 +118,8 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtApellido" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -129,8 +129,8 @@
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnRegistrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="22" max="32767" attributes="0"/>
@@ -158,19 +158,22 @@
         <Property name="text" type="java.lang.String" value="Apellidos"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="txtNombre">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Opciones"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btnRegistrar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btnModificar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Modificar"/>
       </Properties>
@@ -183,10 +186,11 @@
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
+          <StringArray count="4">
             <StringItem index="0" value="Presidente"/>
             <StringItem index="1" value="Secretario"/>
             <StringItem index="2" value="Vocal"/>
+            <StringItem index="3" value="Suplente"/>
           </StringArray>
         </Property>
       </Properties>
@@ -220,7 +224,7 @@
         <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="btnApellido">
+    <Component class="javax.swing.JTextField" name="txtApellido">
     </Component>
   </SubComponents>
 </Form>
